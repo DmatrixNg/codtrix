@@ -1,0 +1,789 @@
+
+.btn-account {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 0;
+    border: 0;
+    -ms-flex-wrap: none;
+    flex-wrap: none;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background: none;
+    color: inherit;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    -webkit-transition: background-color .15s;
+    transition: background-color .15s;
+    outline: 0;
+}
+
+.btn-account:focus,.btn-account:hover {
+    color: inherit;
+    text-decoration: none
+}
+
+.btn-account.focus,.btn-account.show,.btn-account:active,.btn-account:focus {
+    outline: 0
+}
+
+.btn-account .account-summary {
+    margin-right: 1rem;
+    margin-left: .5rem;
+    display: block;
+    text-align: left;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    overflow: hidden;
+    text-overflow: clip;
+    white-space: nowrap
+}
+
+.btn-account .account-description,.btn-account .account-name {
+    margin: 0;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: 500;
+    line-height: 1rem
+}
+
+.btn-account .account-description {
+    font-size: .75rem;
+    font-weight: 400;
+    opacity: .7
+}
+
+.btn-account .caret {
+    border-top-width: 6px;
+    border-right-width: 5px;
+    border-left-width: 5px
+}
+
+.btn-account .account-icon {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    font-size: .875rem;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    opacity: .7
+}
+
+.btn-account .account-icon .caret,.btn-account .account-icon .fa-caret-down {
+    -webkit-transition: -webkit-transform .2s ease-in-out;
+    transition: -webkit-transform .2s ease-in-out;
+    transition: transform .2s ease-in-out;
+    transition: transform .2s ease-in-out,-webkit-transform .2s ease-in-out
+}
+
+.btn-account[aria-expanded=true]>.account-icon>.caret,.btn-account[aria-expanded=true]>.account-icon>.fa-caret-down {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg)
+}
+
+.user-avatar {
+    position: relative;
+    margin-bottom: 0;
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    font-size: 2rem;
+    border-radius: 4rem;
+    background-color: #fff;
+    vertical-align: middle
+}
+
+.user-avatar-xxl {
+    width: 8rem;
+    height: 8rem;
+    font-size: 8rem
+}
+
+.user-avatar-xl {
+    width: 5rem;
+    height: 5rem;
+    font-size: 5rem
+}
+
+.user-avatar-lg {
+    width: 3rem;
+    height: 3rem;
+    font-size: 3rem
+}
+
+.user-avatar-md {
+    width: 2.188rem;
+    height: 2.188rem;
+    font-size: 2.188rem
+}
+
+.user-avatar-sm {
+    width: 1.5rem;
+    height: 1.5rem;
+    font-size: 1.5rem
+}
+
+.user-avatar-xs {
+    width: 1.25rem;
+    height: 1.25rem;
+    font-size: 1.25rem
+}
+
+.user-avatar.dropdown .dropdown-menu {
+    min-width: 6rem
+}
+
+.user-avatar.dropdown.focus .avatar-badge>.oi:before,.user-avatar.dropdown.show .avatar-badge>.oi:before,.user-avatar.dropdown:focus .avatar-badge>.oi:before,.user-avatar.dropdown:hover .avatar-badge>.oi:before {
+    content: "\e02d"
+}
+
+.user-avatar.dropdown.focus .avatar-badge>.fa:before,.user-avatar.dropdown.show .avatar-badge>.fa:before,.user-avatar.dropdown:focus .avatar-badge>.fa:before,.user-avatar.dropdown:hover .avatar-badge>.fa:before {
+    content: "\f0d7"
+}
+
+.user-avatar.dropdown.focus .offline,.user-avatar.dropdown.show .offline,.user-avatar.dropdown:focus .offline,.user-avatar.dropdown:hover .offline {
+    color: #fff
+}
+
+.user-avatar>a {
+    color: inherit;
+    outline: 0
+}
+
+.user-avatar>a:focus,.user-avatar>a:hover {
+    color: inherit;
+    text-decoration: none
+}
+
+.user-avatar audio,.user-avatar canvas,.user-avatar img,.user-avatar video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 4rem
+}
+
+a.user-avatar:focus,a.user-avatar:hover {
+    outline: 0
+}
+
+a.user-avatar:focus {
+    -webkit-box-shadow: 0 0 0 3px #346cb0;
+    box-shadow: 0 0 0 3px #346cb0
+}
+
+.user-avatar-lg .avatar-badge {
+    right: 5px
+}
+
+.user-avatar-sm .avatar-badge,.user-avatar-xs .avatar-badge {
+    right: -2px
+}
+
+.user-avatar-floated {
+    margin-top: -2.5rem;
+    -webkit-box-shadow: 0 0 0 2px #fff;
+    box-shadow: 0 0 0 2px #fff;
+    z-index: 2
+}
+
+.user-avatar-floated.user-avatar-lg {
+    margin-top: -.5rem
+}
+
+.avatar-group {
+    display: inline-block
+}
+
+.avatar-group .user-avatar {
+    -webkit-box-shadow: 0 0 0 2px #fff;
+    box-shadow: 0 0 0 2px #fff
+}
+
+.avatar-group .user-avatar:focus,.avatar-group .user-avatar:hover {
+    z-index: 2
+}
+
+.avatar-group .user-avatar+.user-avatar {
+    display: inline-block;
+    margin-left: -.5em
+}
+
+.stacked-menu ul.menu {
+    display: block;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none
+}
+
+.stacked-menu ul.menu+.menu {
+    margin-top: 1em
+}
+
+.stacked-menu .menu-header {
+    margin: .5em 0 0;
+    padding: .5rem 1rem;
+    color: #686f76;
+    font-size: .8125rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px
+}
+
+.stacked-menu .menu-header>.badge,.stacked-menu .menu-header>.label {
+    position: absolute;
+    right: .75rem;
+    z-index: 2
+}
+
+.stacked-menu .menu-subhead {
+    display: none;
+    color: #346cb0
+}
+
+.stacked-menu .menu-link,.stacked-menu .menu-subhead {
+    padding: .5rem 1rem;
+    font-size: .875rem;
+    line-height: 1.75em;
+    overflow: hidden
+}
+
+.stacked-menu .menu-link {
+    position: relative;
+    display: block;
+    color: #686f76;
+    text-decoration: none
+}
+
+.stacked-menu .menu-link>.menu-icon {
+    width: 1.25em;
+    margin-right: .5em;
+    text-align: center;
+    font-size: 1.25rem;
+    color: #a9acb0
+}
+
+.stacked-menu .menu-link>.badge,.stacked-menu .menu-link>.label {
+    position: absolute;
+    right: .75rem;
+    margin-top: .25em;
+    z-index: 2
+}
+
+.stacked-menu .menu-link:focus {
+    color: #346cb0;
+    background-color: transparent;
+    text-decoration: none;
+    overflow: visible
+}
+
+.stacked-menu .menu-link:focus .menu-icon {
+    color: #686f76
+}
+
+.stacked-menu .menu-link:hover {
+    color: #346cb0;
+    background-color: transparent;
+    text-decoration: none;
+    overflow: visible
+}
+
+.stacked-menu .menu-link:hover .menu-icon {
+    color: #686f76
+}
+
+.stacked-menu .menu-item+.menu-item {
+    margin-top: 0
+}
+
+.stacked-menu .menu-item.has-open:not(.has-active)>.menu-link {
+    background-color: transparent;
+    color: #346cb0
+}
+
+.stacked-menu .menu-item.has-open:not(.has-active)>.menu-link .menu-icon {
+    color: #686f76
+}
+
+.stacked-menu .menu-item.has-active>.menu-link {
+    background-color: transparent;
+    color: #346cb0
+}
+
+.stacked-menu .menu-item.has-active>.menu-link .menu-icon {
+    color: #346cb0
+}
+
+.stacked-menu .has-child {
+    position: relative
+}
+
+.stacked-menu .has-child>.menu {
+    height: 0;
+    visibility: hidden;
+    opacity: 0;
+    background-color: #f5f5f5
+}
+
+.stacked-menu .has-child.has-active:hover>.menu,.stacked-menu .has-child.has-open>.menu {
+    overflow: visible
+}
+
+.stacked-menu .has-child.has-active>.menu {
+    height: auto;
+    visibility: visible;
+    opacity: 1
+}
+
+.stacked-menu>.menu>.menu-item>.menu-link {
+    color: #28313b
+}
+
+.stacked-menu>.menu>.menu-item.has-open>.menu-link,.stacked-menu>.menu>.menu-item>.menu-link:focus,.stacked-menu>.menu>.menu-item>.menu-link:hover {
+    color: #131d28;
+    background-color: #f5f5f5
+}
+
+.stacked-menu>.menu>.menu-item.has-active>.menu-link {
+    background-color: #f5f5f5;
+    color: #346cb0
+}
+
+.stacked-menu>.menu>.menu-item>.menu .menu-link {
+    padding-left: 3rem
+}
+
+.stacked-menu>.menu>.menu-item>.menu .menu .menu-link {
+    padding-left: 4rem
+}
+
+.stacked-menu>.menu>.menu-item>.menu .menu .menu .menu-link {
+    padding-left: 5rem
+}
+
+.stacked-menu .menu-item.disabled>.menu-link,.stacked-menu .menu-item.disabled>.menu-link .menu-icon,.stacked-menu .menu-item>.menu-link.disabled,.stacked-menu .menu-item>.menu-link.disabled .menu-icon {
+    color: #686f76
+}
+
+.stacked-menu .menu-item.disabled>.menu-link:focus,.stacked-menu .menu-item.disabled>.menu-link:focus .menu-icon,.stacked-menu .menu-item.disabled>.menu-link:hover,.stacked-menu .menu-item.disabled>.menu-link:hover .menu-icon,.stacked-menu .menu-item>.menu-link.disabled:focus,.stacked-menu .menu-item>.menu-link.disabled:focus .menu-icon,.stacked-menu .menu-item>.menu-link.disabled:hover,.stacked-menu .menu-item>.menu-link.disabled:hover .menu-icon {
+    background-color: transparent;
+    color: #686f76
+}
+
+.stacked-menu-has-compact .has-child.has-active>.menu {
+    visibility: hidden;
+    height: 0;
+    opacity: 0
+}
+
+.stacked-menu-has-compact .has-child.has-active .menu-subhead {
+    background-color: #f5f5f5
+}
+
+.stacked-menu-has-compact .has-child .menu-subhead {
+    display: block
+}
+
+.stacked-menu-has-compact>.menu>.menu-item>.menu-link {
+    text-align: center;
+    padding-right: 0;
+    padding-left: 0;
+    max-height: 40px
+}
+
+.stacked-menu-has-compact>.menu>.menu-item>.menu-link>.badge,.stacked-menu-has-compact>.menu>.menu-item>.menu-link>.label {
+    top: 0;
+    right: .25rem
+}
+
+.stacked-menu-has-compact>.menu>.menu-item>.menu-link .menu-icon {
+    margin: 0;
+    font-size: 1.25em;
+    line-height: 1.5em
+}
+
+.stacked-menu-has-compact>.menu>.menu-item.has-child>.menu-link .menu-text {
+    display: none
+}
+
+.stacked-menu-has-compact>.menu>.menu-header {
+    margin: 0;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    opacity: 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none
+}
+
+.stacked-menu-has-compact>.menu>.menu-item:not(.has-child)>.menu-link .menu-text {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 100%;
+    padding: .5rem .75rem .5rem 0;
+    border-radius: 0 0 0 0;
+    width: 0;
+    height: 0;
+    visibility: hidden;
+    opacity: 0;
+    background-color: #f5f5f5;
+    line-height: 1.75em;
+    white-space: nowrap;
+    -webkit-transition: opacity .15s linear;
+    transition: opacity .15s linear
+}
+
+.stacked-menu-has-compact>.menu>.menu-item:not(.has-child)>.menu-link:hover .menu-text {
+    width: auto;
+    height: auto;
+    visibility: visible;
+    opacity: 1
+}
+
+.stacked-menu-has-compact>.menu>.menu-item.disabled>.menu-link .menu-text,.stacked-menu-has-compact>.menu>.menu-item.has-active>.menu-link .menu-text,.stacked-menu-has-compact>.menu>.menu-item>.menu-link.disabled .menu-text {
+    background-color: #f5f5f5
+}
+
+.stacked-menu-has-compact>.menu>.menu-item.has-child>.menu-link:before {
+    content: none
+}
+
+.stacked-menu-has-compact>.menu>.menu-item.has-child>.menu-link .menu-text {
+    padding: .5rem 1rem;
+    text-align: left;
+    width: 200px
+}
+
+.stacked-menu-has-collapsible .has-child>.menu-link:after {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content: "\f104";
+    position: absolute;
+    right: .75rem;
+    top: 50%;
+    -webkit-transform: translateY(-.5em);
+    transform: translateY(-.5em);
+    height: 1em;
+    width: 1em;
+    line-height: 1em;
+    text-align: center
+}
+
+.stacked-menu-has-collapsible .has-child.has-active>.menu-link:after,.stacked-menu-has-collapsible .has-child.has-open>.menu-link:after {
+    content: "\f107"
+}
+
+.stacked-menu-has-collapsible .has-child>.menu {
+    visibility: visible;
+    opacity: 1;
+    overflow: hidden
+}
+
+.stacked-menu-has-collapsible .has-child.has-open:not(.has-active)>.menu {
+    height: auto
+}
+
+.stacked-menu-has-collapsible.stacked-menu-has-compact>.menu>.has-child>.menu {
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: scale(.6);
+    transform: scale(.6);
+    -webkit-transition: opacity .15s linear,-webkit-transform .15s linear;
+    transition: opacity .15s linear,-webkit-transform .15s linear;
+    transition: opacity .15s linear,transform .15s linear;
+    transition: opacity .15s linear,transform .15s linear,-webkit-transform .15s linear
+}
+
+.stacked-menu-has-collapsible.stacked-menu-has-compact>.menu>.has-child.has-open>.menu {
+    -webkit-transform: scale(1);
+    transform: scale(1)
+}
+
+.stacked-menu-has-collapsible.stacked-menu-has-compact>.menu>.has-child>.menu-link:after {
+    display: none
+}
+
+.stacked-menu-has-collapsible.stacked-menu-has-compact .has-child.has-open>.menu {
+    position: absolute;
+    width: 200px;
+    top: 0;
+    left: 100%;
+    height: auto;
+    visibility: visible;
+    opacity: 1;
+    border-radius: 0 0 0 0
+}
+
+.stacked-menu-has-collapsible.stacked-menu-has-compact .has-child>.menu .menu-link {
+    padding-left: 1rem
+}
+
+.stacked-menu-has-collapsible.stacked-menu-has-compact .menu .menu .has-child.has-open>.menu {
+    position: static;
+    width: auto;
+    top: auto;
+    left: auto
+}
+
+.stacked-menu-has-collapsible.stacked-menu-has-compact .menu .menu .has-child>.menu .menu-link {
+    padding-left: 2rem
+}
+
+.stacked-menu-has-collapsible.stacked-menu-has-compact .menu .menu .has-child>.menu .menu .menu-link {
+    padding-left: 3rem
+}
+
+.stacked-menu-has-hoverable .has-child>.menu {
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transition: opacity .15s linear,-webkit-transform .15s linear;
+    transition: opacity .15s linear,-webkit-transform .15s linear;
+    transition: opacity .15s linear,transform .15s linear;
+    transition: opacity .15s linear,transform .15s linear,-webkit-transform .15s linear
+}
+
+.stacked-menu-has-hoverable .has-child:not(.has-active)>.menu {
+    -webkit-transform: scale(.6);
+    transform: scale(.6)
+}
+
+.stacked-menu-has-hoverable.stacked-menu-has-compact>.menu>.has-child>.menu {
+    -webkit-transition: opacity .15s linear,-webkit-transform .15s linear;
+    transition: opacity .15s linear,-webkit-transform .15s linear;
+    transition: opacity .15s linear,transform .15s linear;
+    transition: opacity .15s linear,transform .15s linear,-webkit-transform .15s linear
+}
+
+.stacked-menu-has-hoverable.stacked-menu-has-compact .has-child>.menu {
+    -webkit-transform: scale(.6);
+    transform: scale(.6)
+}
+
+.stacked-menu-has-compact .has-child.has-open:not(.has-active)>.menu,.stacked-menu-has-hoverable .has-child.has-open:not(.has-active)>.menu {
+    position: absolute;
+    width: 200px;
+    top: 0;
+    left: 100%;
+    height: auto;
+    visibility: visible;
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1)
+}
+
+.stacked-menu-has-compact .has-child.has-open:not(.has-active)>.menu .menu-item>.menu-link,.stacked-menu-has-compact .has-child.has-open:not(.has-active)>.menu .menu-item>.menu .menu-link,.stacked-menu-has-compact .has-child.has-open:not(.has-active)>.menu .menu-item>.menu .menu .menu-link,.stacked-menu-has-hoverable .has-child.has-open:not(.has-active)>.menu .menu-item>.menu-link,.stacked-menu-has-hoverable .has-child.has-open:not(.has-active)>.menu .menu-item>.menu .menu-link,.stacked-menu-has-hoverable .has-child.has-open:not(.has-active)>.menu .menu-item>.menu .menu .menu-link {
+    padding-left: 1rem
+}
+
+.stacked-menu-has-compact .has-child.has-open:not(.has-active)>.menu-link:before,.stacked-menu-has-hoverable .has-child.has-open:not(.has-active)>.menu-link:before {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 0;
+    height: 0;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-right: 8px solid #f5f5f5;
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px)
+}
+
+.stacked-menu-has-hoverable.stacked-menu-has-compact .has-child.has-open>.menu {
+    position: absolute;
+    width: 200px;
+    top: 0;
+    left: 100%;
+    height: auto;
+    visibility: visible;
+    opacity: 1;
+    border-radius: 0 0 0 0;
+    -webkit-transform: scale(1);
+    transform: scale(1)
+}
+
+.stacked-menu-has-hoverable.stacked-menu-has-compact .has-child.has-open>.menu .menu-item>.menu-link,.stacked-menu-has-hoverable.stacked-menu-has-compact .has-child.has-open>.menu .menu-item>.menu .menu-link,.stacked-menu-has-hoverable.stacked-menu-has-compact .has-child.has-open>.menu .menu-item>.menu .menu .menu-link {
+    padding-left: 1rem
+}
+
+.stacked-menu-has-left.stacked-menu-has-compact>.menu>.menu-item>.menu-link>.badge {
+    right: auto;
+    left: .25rem
+}
+
+.stacked-menu-has-left.stacked-menu-has-compact>.menu>.menu-item:not(.has-child)>.menu-link .menu-text {
+    right: 100%;
+    left: auto;
+    padding: .5rem 0 .5rem .75rem;
+    border-radius: 0 0 0 0
+}
+
+.stacked-menu-has-left.stacked-menu-has-collapsible.stacked-menu-has-compact>.menu>.has-child>.menu,.stacked-menu-has-left.stacked-menu-has-hoverable .has-child>.menu {
+    -webkit-transform-origin: 100% 0;
+    transform-origin: 100% 0
+}
+
+.stacked-menu-has-left.stacked-menu-has-compact .has-child.has-open:not(.has-active)>.menu,.stacked-menu-has-left.stacked-menu-has-hoverable .has-child.has-open:not(.has-active)>.menu {
+    left: auto;
+    right: 100%
+}
+
+.stacked-menu-has-left.stacked-menu-has-compact .has-child.has-open:not(.has-active)>.menu-link:before,.stacked-menu-has-left.stacked-menu-has-hoverable .has-child.has-open:not(.has-active)>.menu-link:before {
+    right: auto;
+    left: 0;
+    border-right: 0 solid transparent;
+    border-left: 8px solid #f5f5f5
+}
+
+.stacked-menu-has-left.stacked-menu-has-collapsible.stacked-menu-has-compact .has-child.has-open>.menu,.stacked-menu-has-left.stacked-menu-has-hoverable.stacked-menu-has-compact .has-child.has-open>.menu {
+    left: auto;
+    right: 100%
+}
+
+.stacked-menu {
+    padding-top: 1rem;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.stacked-menu .menu-link,.stacked-menu .menu-subhead {
+    padding-right: 1.5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap
+}
+
+.stacked-menu .menu-link {
+    font-size: 1rem;
+    outline: 0
+}
+
+@media (min-width: 768px) {
+    .stacked-menu .menu-link {
+        padding-top:.375rem;
+        padding-bottom: .375rem;
+        font-size: .875rem;
+        line-height: 1.25rem
+    }
+}
+
+.stacked-menu .menu-link>.badge {
+    margin-top: .325rem
+}
+
+.stacked-menu .menu-link>.menu-icon.fa,.stacked-menu .menu-link>.menu-icon.fab,.stacked-menu .menu-link>.menu-icon.far,.stacked-menu .menu-link>.menu-icon.oi {
+    top: 2px
+}
+
+.stacked-menu .menu-header {
+    margin-top: 1rem;
+    letter-spacing: 0;
+    line-height: 1.25rem
+}
+
+.stacked-menu .menu-header>.badge {
+    position: relative;
+    top: 3px;
+    right: -.25rem;
+    float: right
+}
+
+.stacked-menu .menu-item.has-active:not(.has-child)>.menu-link {
+    font-weight: 600
+}
+
+.stacked-menu .menu-item.has-active.has-child>.menu-link {
+    color: #28313b
+}
+
+.stacked-menu>.menu>.menu-item>.menu .menu-link {
+    padding-left: 3.5rem
+}
+
+.stacked-menu>.menu>.menu-item>.menu .menu .menu .menu-link {
+    padding-left: 4.5rem
+}
+
+.stacked-menu-has-collapsible .has-child>.menu-link:after {
+    content: "";
+    margin-top: -.375rem;
+    opacity: .4;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    -webkit-transition: -webkit-transform .2s ease-in-out;
+    transition: -webkit-transform .2s ease-in-out;
+    transition: transform .2s ease-in-out;
+    transition: transform .2s ease-in-out,-webkit-transform .2s ease-in-out;
+    background: url("data:image/svg+xml;charset=UTF-8,%3csvg aria-hidden='true' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 512'%3e%3cpath fill='currentColor' d='M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z'%3e%3c/path%3e%3c/svg%3e") 50% no-repeat
+}
+
+.stacked-menu-has-collapsible .has-child.has-active>.menu-link:after,.stacked-menu-has-collapsible .has-child.has-open>.menu-link:after {
+    content: "";
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg)
+}
+.aside-header {
+    position: relative;
+    display: block;
+    background-color: #fff;
+    -webkit-box-shadow: 0 0 0 1px rgba(61,70,79,.05),0 1px 3px 0 rgba(61,70,79,.15);
+    box-shadow: 0 0 0 1px rgba(61,70,79,.05),0 1px 3px 0 rgba(61,70,79,.15);
+    z-index: 3
+}
+
+.aside-header>.hamburger {
+    display: none;
+    position: absolute;
+    top: .75rem;
+    right: -3rem
+}
+
+.aside-header .btn-account {
+    padding: 1rem;
+    width: 100%;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start
+}
+
+.aside-header .btn-account.focus,.aside-header .btn-account:focus {
+    background-color: inherit
+}
+
+.aside-header .btn-account:active {
+    background-color: #dee9f5
+}
+
+.aside-header .btn-account[aria-expanded=true]:before {
+    content: "";
+    height: 1px;
+    background-color: #fff;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2
+}
+
+.aside-header .btn-account .account-name {
+    font-size: 1.125rem;
+    line-height: 1.5rem
+}
+
+.aside-header .btn-account .account-description {
+    font-size: .875em
+}

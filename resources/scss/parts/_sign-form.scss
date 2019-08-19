@@ -1,0 +1,46 @@
+/* Sign Form Part */
+.sign-form{
+  padding: 5rem;
+  margin: 0 1.5rem;
+  border: 2px solid $primary;
+  border-radius: 1rem;
+  @include media-breakpoint-down(xs){
+    padding: 2rem;
+    margin: 0;
+  }
+  .form-group{
+    .form-control{
+      border: 2px solid #eaeaea;
+      border-radius: 5px;
+      @include box-shadow(none);
+      &:focus{
+        border-color: $primary;
+      }
+    }
+    .custom-checkbox{
+      .custom-control-input{
+        &:checked~{
+          .custom-control-label{
+            &:before{
+              background-color: $primary;
+            }
+          }
+        }
+      }
+      .custom-control-label{
+        &:before{
+          top: 6px;
+          left: 0;
+          width: 1.5rem;
+          height: 1.5rem;
+        }
+        &:after{
+          top: 4px;
+          left: -2px;
+          width: 2rem;
+          height: 2rem;
+        }
+      }
+    }
+  }
+}

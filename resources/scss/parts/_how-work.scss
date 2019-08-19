@@ -1,0 +1,37 @@
+/* How It Works Part */
+.how-work{
+  .work-box{
+    @include media-breakpoint-up(xl){
+      padding-left: 3rem;
+      padding-right: 3rem;
+    }
+    .card-body{
+      padding-top: 0;
+      padding-bottom: 4rem;
+      padding-left: 2rem;
+      padding-right: 2rem;
+      p{
+        font-size: 1.7rem;
+        line-height: 3.4rem;
+      }
+      .icon{
+        position: relative;
+        top: -4rem;
+        margin-bottom: -1.5rem;
+        width: 8rem;
+        height: 8rem;
+        border-radius: 50%;
+        i{
+          font-size: 3.2rem;
+          color: $white;
+          line-height: 8rem;
+        }
+      }
+    }
+    &:hover{
+      .icon{
+        @include transform (scale(.9));
+      }
+    }
+  }
+}
