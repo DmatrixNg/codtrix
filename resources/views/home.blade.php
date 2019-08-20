@@ -137,16 +137,21 @@ pay(item,price);
     <div class="row">
       @parent
       <div class="col-12 col-md-8 col-lg-9 mb-sm-50">
-        @foreach ($tut as $feed)
+        @foreach($post as $post)
         <div class="card mb-50" data-aos="fade-up">
+          @if($post['image'] !== '')
           <div class="card-header position-relative">
-            <a href="blog-details.html"><img src="assets/img/blog/1.jpg" alt="Post Thumbnail"></a>
+            <a href="post/{{$post['slug']}}"><img src="{{asset('storage')}}/{{$post['image']}}" alt="Post Thumbnail"></a>
           </div>
+            @endif
           <div class="card-body bg-white">
-            <h3><a href="blog-details.html">{{$feed['title']}}</a></h3>
+            <h3><a href="blog-details.html">{!! $post['title'] !!}</a></h3>
             <h5 class="mb-25">Cod|triX</h5>
-            <p class="mb-30">{{$feed['desc']}}</p>
-            <a href="blog-details.html" class="btn btn-primary">Read More</a>
+            <p class="mb-30">  @php
+              echo  strip_tags($post['body'])
+                @endphp
+                </p>
+            <a href="post/{{$post['slug']}}" class="btn btn-primary">Read More</a>
           </div>
         </div>
         @endforeach

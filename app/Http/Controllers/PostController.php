@@ -9,15 +9,24 @@ use KzykHys\FrontMatter\FrontMatter;
 use Symfony\Component\Finder\Finder;
 use KzykHys\FrontMatter\Document as Doc;
 use Storage;
+use Auth;
 
 use App\tutorial;
 
 class PostController extends Controller
 {
+
+  public function __construct()
+  {
+      $this->middleware('auth');
+  }
+
   public function index()
     {
+      $user = Auth::user();
+      //dd($user);
 $posts=$this->get('posts');
-dd($posts);
+//dd($posts);
 return view('home',['post' => $posts ]);
 
      }
@@ -52,6 +61,21 @@ $body = $request->postVal;
       //  return redirect('home')->with('msg', 'Ph successfully');
 
     }
+
+
+    public function singlePostPage($username,$postTitle){
+
+      $post=$app->getPost($postTitle);
+
+      if(!$post){
+          return redirect('/home');
+      }
+
+      
+
+      return view('single-blog-post', compact('post','user'));
+  }
+
  public function save($title,$body,$desc,$category,$type)
  {
    tutorial::insert([

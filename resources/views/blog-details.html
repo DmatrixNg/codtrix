@@ -1,82 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta name="description" content="RNR - Sass & Software Landing Page">
+@extends('layouts.lucid')
+@section('title')
+@if(Auth::user() && Auth::user()->username == $user->username)
+{{ $post['title'] }} - {{ $user->username }} - Lucid
+@else
+{{ $post['title'] }} - {{ $user->name }} (@ {{ $user->username }})
+@endif
+@php
+$location= 'singlePost';
+@endphp
+@endsection
+@section('sidebar')
+@parent
 
-  <title>rnr || Blog Details</title>
-  <!-- Favicon -->
-  <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
-  <!-- Style CSS -->
-  <link rel="stylesheet" href="style.css">
-
-  <!-- Modernizer JS -->
-  <script src="assets/js/vandor/modernizr-3.5.0.min.js"></script>
-</head>
-<!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-<![endif]-->
-
-<body>
-  <!-- Preloader Start -->
-  <div id="fadeout" class="loader w-100 h-100 position-absolute">
-    <div class="h-100 d-flex justify-content-center align-items-center">
-      <div class="one circle"></div>
-      <div class="two circle"></div>
-    </div>
-  </div>
-  <!-- Preloader End -->
-
-  <!-- Header Start -->
-  <header class="position-fixed bg-white w-100">
-    <nav id="active-sticky" class="navbar navbar-light navbar-expand-lg">
-      <div class="container">
-        <a class="navbar-brand" href="index.html"><img src="assets/img/logo.png" alt="rnr"></a>
-        <button class="navbar-toggler navber-toggler-right" data-toggle="collapse" data-target="#navbarToggler">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarToggler">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a href="index.html" class="nav-link">Home</a>
-            </li>
-            <li class="nav-item">
-              <a href="about-us.html" class="nav-link">About Us</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" >Pages</a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="services.html">Best Services</a></li>
-                <li><a class="dropdown-item" href="pricing.html">Pricing Plan</a></li>
-                <li><a class="dropdown-item" href="faq.html">Faq</a></li>
-                <li><a class="dropdown-item" href="team.html">Team</a></li>
-                <li><a class="dropdown-item" href="login.html">Login</a></li>
-                <li><a class="dropdown-item" href="register.html">Register</a></li>
-                <li><a class="dropdown-item" href="coming-soon.html">Coming Soon</a></li>
-                <li><a class="dropdown-item" href="error-404.html">404 Error</a></li>
-              </ul>
-            </li>
-            <li class="nav-item dropdown">
-              <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" >Blog</a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="blog.html">Blog</a></li>
-                <li><a class="dropdown-item" href="blog-details.html">Blog Details</a></li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a href="contact.html" class="nav-link">Contact Us</a>
-            </li>
-          </ul>
-          <div class="pl-20">
-            <a class="btn btn-sm btn-primary rounded" href="#">Free Try</a>
-          </div>
-        </div>
-      </div>
-    </nav>
-  </header>
+@endsection
+@section('content')
   <div class="header-space"></div>
   <!-- Header End -->
   <!-- Breadcrumb Area Start -->
@@ -91,6 +28,25 @@
     </div>
   </nav>
   <!-- Breadcrumb Area End -->
+  <!-- Beginning of Post Content -->
+<div class="post-content">
+    <div class="post-content-body">
+        <p class="post-date">
+        <a href="{{URL::to('/')}}/{{$user->username}}/home" class="text-secondary"> Home </a> /
+        <a href="../home" class="text-secondary"> Blog </a> / <span class="text-muted">{{ $post['title'] }}</span></p>
+        <cite class="post-body">
+            Published on {{ $post['date'] }}
+        </cite>
+        <h3 class="post-title mb-1">
+         {{ $post['title'] }}
+        </h3>
+
+        <div class="blog-content">
+            {!! $post['body'] !!}
+        </div>
+    </div>
+</div>
+
   <!-- Blog Details Start -->
   <section class="blog-page blog-details section-ptb bg-light">
     <div class="container">
@@ -101,21 +57,9 @@
               <img src="assets/img/blog/lg.jpg" alt="Post Thumbnail">
             </div>
             <div class="card-body bg-white">
-              <h3>Resume notifications only when you’re ready</h3>
-              <h5 class="mb-25">By the team at RNR, March 18, 2019</h5>
-              <p class="mb-30">Looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the. Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
-              <h4>Cancel my subscription</h4>
-              <p>Looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the. Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
-              <blockquote class="quote-card bg-light mt-50 mb-50">
-                <p>Looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the.</p>
-              </blockquote>
-              <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia.</p>
-              <ul class="list-group mt-25">
-                <li>Phasellus bibendum ante et enim tincidunt aliquam.</li>
-                <li>Quisque vehicula ligula sit amet aliquet condimentum.</li>
-                <li>Nunc vel turpis vitae quam tincidunt viverra.</li>
-                <li>Cras dignissim risus egestas justo vulputate feugiat.</li>
-              </ul>
+              <h3> {{ $post['title'] }}</h3>
+              <h5 class="mb-25">Published on {{ $post['date'] }}</h5>
+              {!! $post['body'] !!}
             </div>
           </div>
           <!-- Post Details End -->

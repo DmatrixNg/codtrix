@@ -24,7 +24,7 @@ Route::get('/home', 'PostController@index')->name('home');
 Route::get('/upload', 'UploadfileController@index');
 Route::post('/upload', 'UploadfileController@upload');
 Route::get('/notification?{id}', 'UploadfileController@pay');
-
+Route::get('/post/{postTitle}','pageController@singlePostPage');
 Route::get('/tutorial', function () {
     return view('tutorial');
 });
