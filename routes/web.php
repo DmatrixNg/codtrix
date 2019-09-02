@@ -25,14 +25,19 @@ Route::get('/upload', 'UploadfileController@index');
 Route::post('/upload', 'UploadfileController@upload');
 Route::get('/notification?{id}', 'UploadfileController@pay');
 Route::get('/post/{postTitle}','pageController@singlePostPage');
-Route::get('/tutorial', function () {
-    return view('tutorial');
-});
-Route::prefix('admin')->group(function () {
+Route::get('/post/{postTitle}','PostController@publicpost')->name('post');
+
+
+Route::prefix('{username}')->group(function () {
   Route::get('/', function () {
       return view('welcome');
   });
-
-  Route::post('/publish', 'PostController@add');
-  Route::get('/tutorials', 'PostController@index');
+  Route::post('/publish', 'PostController@publish');
+    Route::get('/post/{postTitle}','PostController@singlePostPage')->name('post');
+  Route::get('/tutorials', 'PostController@posts');
+  Route::get('/activate/{id}', 'PostController@activate');
+  Route::get('/deactivate/{id}', 'PostController@deactivate');
+  Route::get('/users', function () {
+      return view('user');
+  });
 });

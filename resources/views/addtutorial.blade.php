@@ -12,8 +12,8 @@
   .btn.btn-primary.publish-post,
   .btn.btn-primary.save-draft,
   .btn.btn-primary.add-tags {
-    background-color: #280a66 !important;
-    border: 1px solid #280a66;
+    background-color: #871e99 !important;
+    border: 1px solid #871e99;
     padding: 6px 5px;
     color: #fff;
   }
@@ -24,7 +24,7 @@
   }
 
   .btn-info {
-    background-color: #280a66 !important;
+    background-color: #871e99 !important;
     border: 0 !important;
   }
 
@@ -57,7 +57,7 @@
   }
 
   .editor-btns {
-    background: #280a66;
+    background: #871e99;
     border-radius: 5px;
   }
 
@@ -70,19 +70,19 @@
   .btn-outline-primary:not(:disabled):not(.disabled):active,
   .show>.btn-outline-primary.dropdown-toggle {
     color: #fff !important;
-    background-color: #280a66 !important;
-    border-color: #280a66 !important;
+    background-color: #871e99 !important;
+    border-color: #871e99 !important;
   }
 
   .btn-outline-primary {
-    color: #280a66 !important;
-    border-color: #280a66 !important;
+    color: #871e99 !important;
+    border-color: #871e99 !important;
   }
 
   .btn-outline-primary:hover {
     color: #fff !important;
-    background-color: #280a66 !important;
-    border-color: #280a66 !important;
+    background-color: #871e99 !important;
+    border-color: #871e99 !important;
   }
 
   /*tag styples end here..*/
@@ -123,7 +123,7 @@
   }
 
   .icon-photo {
-    color: #280a66;
+    color: #871e99;
   }
 
   .icon-video {
@@ -231,6 +231,35 @@
       width: 100% !important;
     }
   }
+
+  .tokenfield .token.standardColor {
+    background: #871e99;
+    color: #fff;
+    padding-bottom: 23px;
+  }
+
+  .tokenfield {
+    padding: 7px;
+
+  }
+  .ui-front {
+    z-index: 9999999 !important;
+}
+  .tokenfield .token{
+    border: none;
+  }
+  .ui-front {
+    z-index: 9999999 !important;
+}
+/* Only make edit and delete buttons appear on hover for bigger screens */
+@media screen and (min-width: 1024px){
+  div.edit-delete-buttons{
+    display: none;
+  }
+  .post-content-body:hover div.edit-delete-buttons {
+    display: initial;
+  }
+}
 </style>
 @section('sidebar')
 <div class="header-space"></div>
@@ -238,103 +267,112 @@
 <!-- Breadcrumb Area Start -->
 <nav class="breadcrumb-area bg-dark bg-6 ptb-70">
   <div class="container d-md-flex">
-    <h2 class="text-white mb-0">Blog Details</h2>
+    <h2 class="text-white mb-0">Tutorial</h2>
     <ol class="breadcrumb p-0 m-0 bg-dark ml-auto">
-      <li class="breadcrumb-item"><a href="index.html">Home</a> <span class="text-white">/</span></li>
-      <li class="breadcrumb-item"><a href="blog.html">Blog</a> <span class="text-white">/</span></li>
-      <li aria-current="page" class="breadcrumb-item active">Blog Details</li>
+      <li class="breadcrumb-item"><a href="/tutorials">Home</a> <span class="text-white">/</span></li>
+      <li aria-current="page" class="breadcrumb-item active">Blog</li>
     </ol>
   </div>
 </nav>
-<section class="blog-page blog-details section-ptb bg-light">
+<section class="blog-page section-ptb bg-light">
   <div class="container">
     <div class="row">
       @parent
       <div class="col-12 col-md-8 col-lg-9 mb-sm-50" data-aos="fade-up">
         <div id="form-container">
-  <form method="POST" class="timeline-editor" id="editor-form" autocomplete="OFF">
-@csrf
-    <div class=" row pt-3 pb-3">
-      <div class="col-12">
+          <form method="POST" class="timeline-editor" id="editor-form" autocomplete="OFF">
+            <div class=" row pb-3">
+              <div class="col-12">
+                <div class="white-background mb-3">
+                  <div class="row pb-2">
+                    <div class="col-12">
+                      <div class="row form-group">
+                        <div class="col-12 mb-3" id="titleBox">
+                          <label for="new-post-title" class="sr-only">Title</label>
+                          <input type="text" id="new-post-title" class="form-control" placeholder="Title" />
+                        </div>
+                        <div class="col-12">
+                          <div id="editor" >
+                            <input type="text" name="body">
+                          </div>
+                        </div>
 
-        <div class="white-background mt-3 mb-3">
-          <div class="row pt-3 pb-2">
-            <div class="col-12">
-              <div class="row form-group">
-                <div class="col-12 mb-3" id="titleBox">
-                  <label for="new-post-title" class="sr-only">Title</label>
-                  <input type="text" id="new-post-title" class="form-control" placeholder="Title" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row mt-5">
+                    <div class="col-12">
+                      <div class="row">
+                        <div class="col-12 collapse" id="collapseExample">
+                          <div class="form-group">
+                            <input type="text" name="tags" id="tags" class="form-control" placeholder="Add">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div class="col-12">
-                  <div id="editor">
-                    <input type="text" name="body">
+              </div>
+              <div class="col-12 mt-3">
+                <div class="row form-row flex-row-reverse">
+                  <!-- <div class="col-3 col-sm-3 col-md-2">
+                    <input type="button" class="form-control btn-sm btn btn-primary save-draft" value="Save Draft" />
+                  </div> -->
+                  <div class="col-3 col-sm-3 col-md-2">
+                    <input type="submit" class="form-control btn-sm btn btn-primary publish-post publishBtn" value="Publish">
+                    <input type="hidden" class="form-control btn-sm btn btn-primary publish-post" value="Save Draft">
+                  </div>
+                  <div class="col-3 col-sm-3 col-md-2">
+                    <input class="form-control btn-sm btn btn-primary add-tags" type="button" data-toggle="collapse" data-target="  #collapseExample" aria-expanded="false" aria-controls="collapseExample" value="Add Tags">
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="row mt-4">
-            <div class="col-12">
-              <div class="row">
-                <div class="col-12 m-2 collapse" id="collapseExample">
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input tags" type="checkbox" id="inlineCheckbox1" value="#Politics">
-                    <label class="form-check-label" for="inlineCheckbox1">Politics</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input tags" type="checkbox" id="inlineCheckbox1" value="#Sports">
-                    <label class="form-check-label" for="inlineCheckbox1">Sports</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input tags" type="checkbox" id="inlineCheckbox1" value="#Health">
-                    <label class="form-check-label" for="inlineCheckbox1">Health</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input tags" type="checkbox" id="inlineCheckbox1" value="#Technology">
-                    <label class="form-check-label" for="inlineCheckbox1">Technology</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input tags" type="checkbox" id="inlineCheckbox1" value="#Music">
-                    <label class="form-check-label" for="inlineCheckbox1">Music</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input tags" type="checkbox" id="inlineCheckbox1" value="#News-Lifestyle">
-                    <label class="form-check-label" for="inlineCheckbox1">News-Lifestyle</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input tags" type="checkbox" id="inlineCheckbox1" value="#Movies">
-                    <label class="form-check-label" for="inlineCheckbox1">Movies</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input tags" type="checkbox" id="inlineCheckbox1" value="#Fitness">
-                    <label class="form-check-label" for="inlineCheckbox1">Fitness</label>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-12 mt-3">
-        <div class="row form-row flex-row-reverse">
-          <!-- <div class="col-3 col-sm-3 col-md-2">
-            <input type="button" class="form-control btn-sm btn btn-primary save-draft" value="Save Draft" />
-          </div> -->
-          <div class="col-3 col-sm-3 col-md-2">
-            <input type="submit" class="form-control btn-sm btn btn-primary publish-post" value="Publish">
-            <input type="hidden" class="form-control btn-sm btn btn-primary publish-post" value="Save Draft">
-          </div>
-          <div class="col-3 col-sm-3 col-md-2">
-            <input class="form-control btn-sm btn btn-primary add-tags" type="button" data-toggle="collapse" data-target="  #collapseExample" aria-expanded="false" aria-controls="collapseExample" value="Add Tags">
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- <div class="row pt-2">
+            <!-- <div class="row pt-2">
 
-      </div> -->
-  </form>
-</div>
+              </div> -->
+          </form>
+        </div>
+        @forelse($posts as $post)
+
+
+        <div class="card mb-50" data-aos="fade-up">
+          <div class="card-header position-relative">
+          @if($post['image'] !== '')
+
+            <a href="post/{{$post['slug']}}"><img src="{{$post['image']}}" alt="Post Thumbnail"></a>
+
+          @endif
+          </div>
+          <div class="card-body bg-white">
+            <h3><a href="post/{{$post['slug']}}"></a>{!! $post['title'] !!}</h3>
+            <h5 class="mb-25">{{ $post['date'] }}</h5>
+            <p class="mb-30">
+              @php
+              echo strip_tags($post['body'])
+            @endphp
+            </p>
+            <a href="post/{{$post['slug']}}" class="btn btn-primary">Read More</a>
+            </div>
+        </div>
+            <div class="col-2 edit-delete-buttons">
+              <a title="edit this post" href="" class="mr-4 text-dark" data-toggle="modal" data-target="#editModal" onclick="editPost(
+                '{{ $post['slug'] }}')"><i class="icon ion-md-create" style="font-size: 1.5em"></i></a>
+              <a title="delete this post" href="javascript:void(0)" class="text-dark"  onclick="deletePost({{ $post['id'] }})" data-toggle="modal" data-target="#deleteModal"><i class="icon ion-md-trash" style="font-size: 1.5em"></i></a>
+            </div>
+
+
+
+        @empty
+
+        <div class="post-content">
+          <div class="post-content-body">
+            no posts yet
+          </div>
+        </div>
+
+        @endforelse
+
       </div>
 
       <!-- Comments Area End -->
@@ -345,7 +383,67 @@
 <!-- Blog Post Section End -->
 @endsection
 
+<!-- Edit Modal -->
+<div class="modal fade text-center" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <form method="POST" action="" class="mt-3 edit-post-form">
+            @csrf
+            <div class="form-group">
+              <label class="sr-only">Title</label>
+              <input type="text" class="form-control" placeholder="Title" id="post-title" />
+            </div>
+            <div class="form-group">
+            <div id="editPostEditor">
+              <input type="text" name="body">
+            </div>
+            </div>
+            <div class="row">
+              <div class="col-12 collapse" id="collapseTagsField">
+                <div class="form-group">
+                  <input type="text" name="tags" id="tag" class="tagform-control">
+                  <input type="hidden" name="post_id" id="post_id">
+                </div>
+              </div>
+            </div>
+            <div class="row form-row flex-row-reverse">
+              <div class="col-3 col-sm-3 col-md-2">
+                <input type="submit" class="form-control btn-sm btn btn-primary publish-post savePostBtn" name="savePost" value="Save">
+              </div>
+              <div class="col-3 col-sm-3 col-md-2">
+                <input class="form-control btn-sm btn btn-primary add-tags" type="button" data-toggle="collapse" data-target="#collapseTagsField" aria-expanded="false" aria-controls="collapseExample" value="Add Tags">
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Edit Modal  -->
+  <!-- Delete Modal -->
+  <div class="modal fade text-center" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div>
+            <h4 class="text-main mb-0"> Are you sure you want to delete this post?</h4>
+            <small class="text-muted mt-0"><em>This action is irreversible</em></small>
+            <form method="post" action="" class="mt-3 delete-form">
+              @csrf
+              <input type="hidden" name="post_id">
+              <button type="submit" class="btn btn-danger" name="delete" id="deleteBtn">Delete</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Delete Modal  -->
+
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 <script src="https://cdn.quilljs.com/1.3.4/quill.js"></script>
 <!-- Convert to markdown script -->
@@ -354,164 +452,60 @@
 <!-- convert to markdown script ends -->
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tokenfield/0.12.0/bootstrap-tokenfield.min.js"></script>
+<script src="{{ asset('js/posts.js') }}" type="text/javascript"></script>
+<script src="{{ asset('js/edit-post.js') }}" type="text/javascript"></script>
+<script>
+  function deletePost(post_id) {
+    j('#deleteBtn').on('click',function(e){
+     e.preventDefault();
 
-<script type="text/javascript">
-let j = jQuery.noConflict();
-  var toolbarOptions = [
-    ['bold', 'italic'],
-    ['blockquote'],
-    [{
-      'list': 'ordered'
-    }, {
-      'list': 'bullet'
-    }],
-    [{
-      'header': [1, 2, 3, 4, 5, 6, false]
-    }],
-    ['link', 'image'],
-    ['clean']
-  ];
-
-  var quill = new Quill('#editor', {
-    theme: 'snow',
-    modules: {
-      toolbar: toolbarOptions
-    },
-    placeholder: 'Compose an epic...'
-  });
-  j(".ql-toolbar").css("display", "block");
-
-  var form = document.querySelector('.timeline-editor');
-
-  // handle creating new post
-  form.onsubmit = newPostSubmitHandler;
-
-  // handle saving draft
-  document.querySelector('input[value="Save Draft"]').addEventListener('click', newPostSubmitHandler);
-
-  function newPostSubmitHandler(event) {
-    event.preventDefault();
-    let currentPage = window.localStorage.getItem('page');
-    const formData = new FormData(document.querySelector('#editor-form'));
-    const blogBody = document.querySelector('.ql-editor').innerHTML;
-
-
-
-
-    const title = document.querySelector("#new-post-title").value;
-
-
-    // convert to markdown
-    const turndownService = new TurndownService({
-      codeBlockStyle: 'fenced'
-    });
-    const gfm = turndownPluginGfm.gfm;
-    turndownService.use(gfm);
-    let markdown = turndownService.turndown(blogBody);
-    if (markdown !== "" && title !== "") {
-      formData.set('title', title);
-      // check if the form is being submitted
-      // which would mean a new post is being created rather than saving a draft
-      const newPostIsBeingCreated = event.target instanceof HTMLFormElement;
-
-      // get all imageURIs in the document
-      let imageURIs = markdown.match(/\!\[\]\(data:image\/\w+;base64,[^)]*\)/g);
-      // are there images in the blog post?
-      if (imageURIs) {
-        // remove duplicates
-        imageURIs = imageURIs.reduce((acc, curVal) => {
-          if (!acc.includes(curVal)) acc.push(curVal);
-          return acc;
-        }, []);
-
-
-
-        imageURIs.forEach(imageURI => {
-          const [, fullURI, ext, uriData] = imageURI.match(/\!\[\]\((data:image\/(\w+);base64,([^)]*))\)/);
-          const id = Math.random().toString(36).substr(2, 10);
-          const newImgName = `img-${id}.${ext}`;
-
-
-          // replace the image URI everywhere it occurs in the markdown
-          let stillMatching = true;
-          while (stillMatching) {
-            if (markdown.includes(fullURI)) {
-              markdown = markdown.replace(fullURI, `/storage/admin/images/${newImgName}`);
-            } else {
-              stillMatching = false;
-            }
-          }
-
-          // add this info to the form data being sent to the backend
-          formData.set(newImgName, uriData);
-        });
-
-      }
-
-
-      formData.set('postVal', markdown);
-
-
-      // get tags
-      const selected = document.querySelectorAll('.tags:checked');
-      const selectedTags = Array.from(selected).map(el => el.value);
-      console.log(selectedTags);
-      formData.set('tags', selectedTags);
-
-      // send the form data
-
-      j.ajaxSetup({
-          headers: {
-              'X-CSRF-TOKEN': j('meta[name="csrf-token"]').attr('content')
-          }
-      });
-
-      j.ajax({
-            type: "POST",
-            dataType:'json',
-            url : "publish",
-            data:formData,
-            contentType: false,
-            processData: false,
-            success : function (res) {
-              console.log(JSON.stringify(res));
-
-                if (res.error == false && res.action == 'publish') {
-                  window.localStorage.setItem('publish', 'success');
-                  window.location = 'admin/tutorials';
-
-                } else if (res.error == false && res.action == 'savedToDrafts') {
-                  window.localStorage.setItem('savedToDrafts', 'success');
-                  window.location = 'admin/tutorials';
-                }
-            }
-        });
-
-    } else {
-      swal({
-        text: "Sorry,both fields are required!",
-        icon: "error",
-      });
-    }
+     const formData = new FormData(document.querySelector('.delete-form'));
+     formData.set('post_id',post_id);
+     j.ajax({
+       type:"POST",
+       url:"delete-post",
+       dataType:'json',
+       data:formData,
+       contentType:false,
+       processData:false,
+       beforeSend:function(){
+         j('#deleteBtn').text('Deleting...')
+       },
+       success:function (data) {
+        document.querySelector('.delete-form').reset();
+        j('#deleteBtn').text('Delete')
+         if(data.success){
+           localStorage.setItem('delete',"deleted");
+           window.location = "/admin/posts"
+         }
+       },
+       error:function (){
+        j('#deleteBtn').text('Delete')
+       }
+     })
+    })
   }
 
-  j(document).ready(function() {
-    const published = window.localStorage.getItem('publish');
-    const savedToDrafts = window.localStorage.getItem('savedToDrafts');
-    if (published == 'success') {
-      window.localStorage.removeItem('publish');
+  j(document).ready(function(){
+    const postDelete=localStorage.getItem('delete');
+    if(postDelete == "deleted"){
+      window.localStorage.removeItem('delete');
       swal({
-        text: "Your post was successfully created!",
+        text: "Your post was successfully deleted!",
         icon: "success",
-      });
-    } else if (savedToDrafts == 'success') {
-      window.localStorage.removeItem('savedToDrafts');
-      swal({
-        text: "Your post was successfully created and saved to drafts!",
-        icon: "success",
+        button: {
+          text: "OK",
+          value: true,
+          visible: true,
+          className: "standard-color",
+          closeModal: true,
+      },
       });
     }
-  });
+  })
 </script>
 
 

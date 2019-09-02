@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="csrf-token" content="{{ csrf_token() }}">
+  <meta name="user_id" content="{{ Auth::user()->id }}">
   <meta name="description" content="">
 
   <title>@yield('title')</title>
@@ -91,14 +93,7 @@
   @section('sidebar')
   <div class="col-12 col-md-4 col-lg-3">
     <div class="sidebar" data-aos="fade-in">
-      <div class="widget search-box mb-30">
-        <form class="input-group" action="search">
-          <input class="form-control" type="text" placeholder="Search..">
-          <div class="input-group-append">
-            <button type="submit" class="input-group-text"><i class="ti-search"></i></button>
-          </div>
-        </form>
-      </div>
+
       <!-- Widget End -->
       <div class="widget recent-post bg-white mb-30">
 

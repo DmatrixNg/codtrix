@@ -125,45 +125,70 @@ pay(item,price);
   </div>
 </div>
       @else
-<nav class="breadcrumb-area bg-dark bg-6 ptb-70">
-  <div class="container d-md-flex">
-    <h2 class="text-white mb-0">Homepage</h2>
+      <!-- Header End -->
+      <!-- Breadcrumb Area Start -->
+      <nav class="breadcrumb-area bg-dark bg-6 ptb-70">
+        <div class="container d-md-flex">
+          <h2 class="text-white mb-0">Tutorial</h2>
+          <ol class="breadcrumb p-0 m-0 bg-dark ml-auto">
+            <li class="breadcrumb-item"><a href="/tutorials">Home</a> <span class="text-white">/</span></li>
+            <li aria-current="page" class="breadcrumb-item active">Blog</li>
+          </ol>
+        </div>
+      </nav>
+      <section class="blog-page section-ptb bg-light">
+        <div class="container">
+          <div class="row">
 
-  </div>
-</nav>
-
-<section class="blog-page section-ptb bg-light">
-  <div class="container">
-    <div class="row">
-      @parent
       <div class="col-12 col-md-8 col-lg-9 mb-sm-50">
-        @foreach($post as $post)
+        @forelse($posts as $post)
+
+
         <div class="card mb-50" data-aos="fade-up">
-          @if($post['image'] !== '')
           <div class="card-header position-relative">
-            <a href="post/{{$post['slug']}}"><img src="{{asset('storage')}}/{{$post['image']}}" alt="Post Thumbnail"></a>
+          @if($post['image'] !== '')
+
+            <a href="post/{{$post['slug']}}"><img src="{{$post['image']}}" alt="Post Thumbnail"></a>
+
+          @endif
           </div>
-            @endif
           <div class="card-body bg-white">
-            <h3><a href="blog-details.html">{!! $post['title'] !!}</a></h3>
-            <h5 class="mb-25">Cod|triX</h5>
-            <p class="mb-30">  @php
-              echo  strip_tags($post['body'])
-                @endphp
-                </p>
+            <h3><a href="post/{{$post['slug']}}"></a>{!! $post['title'] !!}</h3>
+            <h5 class="mb-25">{{ $post['date'] }}</h5>
+            <p class="mb-30">
+              @php
+              echo strip_tags($post['body'])
+            @endphp
+            </p>
             <a href="post/{{$post['slug']}}" class="btn btn-primary">Read More</a>
+            </div>
+        </div>
+            <div class="col-2 edit-delete-buttons">
+              <a title="edit this post" href="" class="mr-4 text-dark" data-toggle="modal" data-target="#editModal" onclick="editPost(
+                '{{ $post['slug'] }}')"><i class="icon ion-md-create" style="font-size: 1.5em"></i></a>
+              <a title="delete this post" href="javascript:void(0)" class="text-dark"  onclick="deletePost({{ $post['id'] }})" data-toggle="modal" data-target="#deleteModal"><i class="icon ion-md-trash" style="font-size: 1.5em"></i></a>
+            </div>
+
+
+
+        @empty
+
+        <div class="post-content">
+          <div class="post-content-body">
+            no posts yet
           </div>
         </div>
-        @endforeach
 
+        @endforelse
 
       </div>
-      <!-- Blog Posts End -->
 
+      @parent
     </div>
   </div>
+
 </section>
-@endif
 <!-- Blog Post Section End -->
+@endif
 @endsection
 @endsection
