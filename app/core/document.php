@@ -45,7 +45,7 @@ class Document
                $decoded = base64_decode($image);
                $img_path = "public/admin/images/".$key;
                $image = Storage::disk('local')->put( $img_path, $decoded);
-               $img_path = "storage/admin/images/".$key;
+               $image = "storage/admin/images/".$key;
 
 
               }
@@ -62,7 +62,7 @@ class Document
         'title'=>$title,
         'content'=>$content,
         'tags'=> $tags,
-        'image'=> $img_path,
+        'image'=> $image,
         'slug'=> $slug
       ]);
 
