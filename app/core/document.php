@@ -371,7 +371,7 @@ return $ex;
     //  $user =   DB::table('users')->where('id', $username)->first();
     //   echo $postSlug;
       $post = DB::table('posts')->where(['slug'=>$postSlug,'user_id'=>1])->first();
-    //   dd($post);
+    //  dd($post);
       if(!empty($post)) {
 
         $parsedown  = new Parsedown();
@@ -386,6 +386,7 @@ return $ex;
         return $content;
 
       }
+
 
     }
 

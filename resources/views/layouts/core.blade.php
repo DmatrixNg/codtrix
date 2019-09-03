@@ -12,9 +12,9 @@
   <!-- Favicon -->
   <link rel="shortcut icon" type="image/x-icon" href="{{ asset('favicon.png')}}">
   <!-- Style CSS -->
+  <link rel="stylesheet" href="{{ asset('css/splendor.css')}}">
   <link rel="stylesheet" href="{{ asset('style.css')}}">
   <link rel="stylesheet" href="{{ asset('css/main.min.css')}}">
-
   <!-- Modernizer JS -->
   <script src="{{ asset('js/vandor/modernizr-3.5.0.min.js')}}"></script>
   <link href="https://cdn.quilljs.com/1.3.4/quill.snow.css" rel="stylesheet">

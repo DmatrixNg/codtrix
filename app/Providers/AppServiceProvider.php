@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+//use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Schema; //NEW: Import Schema
 
 class AppServiceProvider extends ServiceProvider
@@ -26,6 +27,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+      //  Blade::withoutDoubleEncoding();
         Schema::defaultStringLength(191); //NEW: Increase StringLength
     }
 }
