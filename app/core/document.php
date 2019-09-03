@@ -223,7 +223,7 @@ return $ex;
               //  $user = DB::table('users')->where('username', $this->user)->first();
 
                 //  dd($feed);
-
+                krsort($feed);
                 return $feed;
 
               //}
