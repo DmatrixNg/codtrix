@@ -1,4 +1,5 @@
 @extends('layouts.core')
+@section('title'){{ \Illuminate\Support\Str::title($post['title']) }}@endsection
 
 @section('content')
 <style>
