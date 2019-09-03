@@ -353,13 +353,13 @@
             @endphp
             </p>
             <a href="post/{{$post['slug']}}" class="btn btn-primary">Read More</a>
-            </div>
-        </div>
-            <div class="col-2 edit-delete-buttons">
+            <div class="">
               <a title="edit this post" href="" class="mr-4 text-dark" data-toggle="modal" data-target="#editModal" onclick="editPost(
-                '{{ $post['slug'] }}')"><i class="icon ion-md-create" style="font-size: 1.5em"></i></a>
-              <a title="delete this post" href="javascript:void(0)" class="text-dark"  onclick="deletePost({{ $post['id'] }})" data-toggle="modal" data-target="#deleteModal"><i class="icon ion-md-trash" style="font-size: 1.5em"></i></a>
+              '{{ $post['slug'] }}')">EDIT</a>
+              <a title="delete this post" href="javascript:void(0)" class="text-dark"  onclick="deletePost({{ $post['id'] }})" data-toggle="modal" data-target="#deleteModal">DELETE</a>
             </div>
+            </div>
+          </div>
 
 
 

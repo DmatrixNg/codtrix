@@ -293,6 +293,16 @@
             <p class="mb-30">
   {!! $post['body'] !!}
 </p>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-3183155544576437"
+     data-ad-slot="4428908445"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
           </div>
         </div>
 
