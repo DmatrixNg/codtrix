@@ -281,7 +281,7 @@
       <div class="col-12 col-md-8 col-lg-9 mb-sm-50" data-aos="fade-up">
         <div class="card">
           <div class="card-header position-relative">
-            @if($post['image'] !== '')
+            @if($post['image'] !== null)
 
               <img src="{{ url('/').'/'.$post['image']}}" alt="Post Thumbnail">
 
